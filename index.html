@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sunset Time - Beautiful Sunset Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <i class="fas fa-sun logo"></i>
+                <h1>Sunset Time</h1>
+                <p>Discover magical sunset moments anywhere in the world</p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Search Section -->
+            <section class="search-section">
+                <div class="search-container">
+                    <div class="search-box">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <input type="text" id="location-input" placeholder="Enter city name or address..." autocomplete="off">
+                        <button id="search-btn" class="search-btn">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                    <button id="current-location-btn" class="current-location-btn">
+                        <i class="fas fa-crosshairs"></i>
+                        Use Current Location
+                    </button>
+                </div>
+            </section>
+
+            <!-- Results Section -->
+            <section class="results-section" id="results-section" style="display: none;">
+                <div class="sunset-card">
+                    <div class="location-info">
+                        <h2 id="location-name">Location</h2>
+                        <p id="location-coords">Coordinates</p>
+                    </div>
+                    
+                    <div class="sunset-info">
+                        <div class="sunset-time">
+                            <i class="fas fa-sun sunset-icon"></i>
+                            <div class="time-details">
+                                <h3>Sunset Time</h3>
+                                <p id="sunset-time" class="time">--:--</p>
+                                <p id="sunset-date" class="date">Today</p>
+                            </div>
+                        </div>
+                        
+                        <div class="additional-info">
+                            <div class="info-item">
+                                <i class="fas fa-sunrise"></i>
+                                <div>
+                                    <span>Sunrise</span>
+                                    <strong id="sunrise-time">--:--</strong>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-clock"></i>
+                                <div>
+                                    <span>Day Length</span>
+                                    <strong id="day-length">--h --m</strong>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-compass"></i>
+                                <div>
+                                    <span>Solar Noon</span>
+                                    <strong id="solar-noon">--:--</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="countdown" id="countdown-section">
+                        <h4>Time until sunset</h4>
+                        <div id="countdown" class="countdown-timer">--h --m --s</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Loading Section -->
+            <section class="loading-section" id="loading-section" style="display: none;">
+                <div class="loading-spinner">
+                    <i class="fas fa-sun spinning"></i>
+                    <p>Finding sunset time...</p>
+                </div>
+            </section>
+
+            <!-- Error Section -->
+            <section class="error-section" id="error-section" style="display: none;">
+                <div class="error-message">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <h3>Oops! Something went wrong</h3>
+                    <p id="error-text">Unable to find sunset time for this location.</p>
+                    <button id="retry-btn" class="retry-btn">Try Again</button>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Built with ❤️ using GitHub Pages | Data from sunrise-sunset.org</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
